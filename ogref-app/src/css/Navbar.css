@@ -1,0 +1,28 @@
+.navbar-logo {
+    width: 10rem; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* La hauteur s'ajuste proportionnellement à la largeur */
+}
+.navbar.bg-primary {
+    background-color: #003366 !important; /* Utilisation de !important pour écraser les styles Bootstrap */
+}
+
+/* Navbar.css */
+.navbar {
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif; /* Change le type de police */
+}
+
+.navbar-nav .nav-link {
+    color: white !important; /* Assure que la couleur des liens soit blanche */
+}
+
+.navbar-nav .nav-item {
+    margin-right: 2rem; /* Ajoute de l'espace à droite de chaque élément */
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #cccccc !important; /* Change la couleur des liens au survol */
+}
+
+

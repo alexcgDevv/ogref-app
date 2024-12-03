@@ -1,0 +1,8 @@
+/* Ajoutez ceci dans votre fichier CSS */
+.partner-logo {
+    width: 10rem; /* ou la taille souhaitée */
+    height: 4rem; /* pour maintenir l'aspect ratio */
+    margin-right: 20px; /* ajustez selon l'espacement désiré */
+    vertical-align: middle; /* pour aligner verticalement avec le texte si nécessaire */
+    margin-bottom: 10px; /* espace au-dessous de chaque logo */
+}
