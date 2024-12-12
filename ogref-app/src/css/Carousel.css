@@ -2,37 +2,113 @@
     padding-top: 2rem;   /* rem plutôt que px */
     padding-left: 2rem;  /* rem plutôt que px */
     padding-right: 2rem; /* rem plutôt que px */
+    position: relative;  /* Nécessaire pour que les contrôles soient bien positionnés */
+    overflow: hidden;    /* Assure que tout reste à l'intérieur du conteneur */
 }
 
-/* Carousel.css */
+/* Carousel Items */
 .carousel-item img {
     width: 100%; /* Maintient la largeur à 100% du conteneur */
     height: auto; /* Ajuste la hauteur pour conserver le ratio */
     max-height: 33rem; /* Hauteur maximale dynamique */
 }
 
-
 .darken-image {
-    filter: brightness(35%); /* Assombrit l'image à 50% de sa luminosité originale */
+    filter: brightness(35%);
+}
+
+.img_carou {
+    min-height: 15rem;
 }
 
 .img-icones {
-    width: 15rem !important;  /* Ajuster selon vos besoins */
-    height: auto !important;  /* Maintient le ratio d'aspect */
-    margin-bottom: 10px !important;  /* Espacement entre le titre et la description */
+    width: 15rem !important;
+    height: auto !important;
+    margin-bottom: 10px !important;
 }
 
-.img-og{
-    width: 35rem !important;  /* Ajuster selon vos besoins */
-    height: auto !important;  /* Maintient le ratio d'aspect */
-    margin-bottom: 10px !important;  /* Espacement entre le titre et la description */
+.img-og {
+    width: 35rem !important;
+    height: auto !important;
+    margin-bottom: 10px !important;
 }
 
 .carousel-caption p {
-    font-size: 1.2rem; /* Taille de la police */
-    font-family: 'Arial', sans-serif; /* Type de police */
-    color: #fff; /* Couleur de la police */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Ombre de texte pour améliorer la lisibilité sur des images assombries */
-    padding: 0.5rem; /* Padding autour du texte */
-    border-radius: 5px; /* Bords arrondis pour le fond */
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* Contrôles du carousel */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%; /* Centre vertical */
+    transform: translateY(-50%);
+    z-index: 1; /* S'assurer qu'ils sont au-dessus des images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem; /* Taille minimum visible */
+    height: 4rem;
+    opacity: 1; /* Toujours visible */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour meilleure visibilité */
+    border-radius: 10%; /* Forme arrondie */
+}
+
+/* Ajuster les marges pour éviter les boutons coupés */
+.carousel-control-prev {
+    left: 3rem; /* Ajustement horizontal */
+}
+
+.carousel-control-next {
+    right: 3rem; /* Ajustement horizontal */
+}
+
+/* Icônes des contrôles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px; /* Ajuster la taille des icônes */
+    height: 30px;
+    background-size: contain; /* Ajuste pour s'assurer que les icônes ne sont pas coupées */
+}
+.img-icones {
+    width: 15%; /* Adapte la largeur en fonction de la taille du conteneur */
+    max-width: 35rem; /* Taille maximale pour éviter qu'elle devienne trop grande */
+    height: auto; /* Maintient le ratio d'aspect */
+    margin-bottom: 10px !important; /* Espacement entre l'image et le texte */
+    display: block; /* S'assure que l'image reste bien centrée */
+    margin-left: auto; /* Centre horizontalement */
+    margin-right: auto; /* Centre horizontalement */
+}
+
+/* Réduction intermédiaire pour écrans entre 768px et 1000px */
+@media (max-width: 1000px) and (min-width: 769px) {
+    .img-icones {
+        width: 20%; /* Taille intermédiaire */
+        max-width: 200px; /* Taille maximale adaptée */
+    }
+}
+
+/* Réduction pour les petits écrans */
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .img-icones {
+        width: 25%; /* Adapte la largeur sur des écrans plus petits */
+        max-width: 100px; /* Réduit la taille maximale */
+    }
 }

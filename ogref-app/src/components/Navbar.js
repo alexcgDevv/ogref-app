@@ -3,21 +3,37 @@ import { Link } from 'react-router-dom';
 
 function Navbar({ onContactClick }) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <Link className="navbar-brand" to="/">
-                <img src="/assets/img_navbar/og-red-blue-white.png" alt="Logo" className="navbar-logo" />
+        <nav className="navbar navbar-expand-md navbar-dark bg-primary">
+            {/* Logo au centre */}
+            <Link className="navbar-brand mx-auto" to="/">
+                <img src="/assets/img_navbar/og-blue3.png" alt="Logo" className="navbar-logo" />
             </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            {/* Bouton hamburger */}
+            <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" // ID du menu à montrer/cacher
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ml-auto">
+
+            {/* Contenu de la navbar */}
+            <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul className="navbar-nav">
+                    {/* Lien vers Accueil */}
                     <li className="nav-item active">
                         <Link className="nav-link" to="/">Accueil</Link>
                     </li>
+                    {/* Lien vers À propos */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/About">À propos</Link>
                     </li>
+                    {/* Lien vers Nous contacter */}
                     <li className="nav-item">
                         <a className="nav-link" href="#footer" onClick={onContactClick}>Nous contacter</a>
                     </li>

@@ -8,14 +8,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    /* Ajout d'un padding autour de chaque section pour plus d'espace */
     padding: 20px;
 }
 
 .about-section .text-content,
 .about-section .image-content {
     flex: 1;
-    padding: 20px; /* Ajout d'un padding à l'intérieur des contenus textuels et visuels */
+    padding: 20px;
 }
 
 .about-section .image-content img {
@@ -35,4 +34,46 @@
 .text-content p {
     line-height: 1.6;
     text-align: justify;
+}
+
+/* Styles pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Passe les éléments en colonne */
+        text-align: center; /* Centre le texte */
+    }
+
+    .about-section .text-content,
+    .about-section .image-content {
+        padding: 10px; /* Réduit le padding pour éviter les débordements */
+    }
+
+    .about-section .image-content img {
+        max-width: 90%; /* Réduit la taille des images */
+        margin: 0 auto; /* Centre les images */
+    }
+
+    .about-container {
+        padding: 10px; /* Réduit le padding général pour un meilleur ajustement */
+    }
+}
+
+/* Styles pour les très petits écrans (téléphones, etc.) */
+@media screen and (max-width: 480px) {
+    .about-section .text-content,
+    .about-section .image-content {
+        padding: 5px; /* Réduction encore plus importante du padding */
+    }
+
+    .about-section .image-content img {
+        max-width: 100%; /* Assure que l'image ne déborde pas */
+    }
+
+    .text-content h2 {
+        font-size: 1.5em; /* Ajuste la taille du titre */
+    }
+
+    .text-content p {
+        font-size: 0.9em; /* Réduit légèrement la taille du texte */
+    }
 }

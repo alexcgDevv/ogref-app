@@ -10,42 +10,39 @@ function Carousel() {
                 <li data-bs-target="#homepageCarousel" data-bs-slide-to="2"></li>
             </ol>
 
-            {/* Wrapper pour les slides */}
+            {/* Slides */}
             <div className="carousel-inner">
-                {/* Page 1 */}
                 <div className="carousel-item active" data-bs-interval="5000">
-                    <img className="d-block w-100 darken-image" src="/assets/img_carousel/img_snowflake.jpg" alt="First slide" />
+                    <img className="d-block w-100 darken-image img_carou" src="/assets/img_carousel/thermo-normalisee.png" alt="Service résidentiel" />
                     <div className="carousel-caption">
-                        <img src="/assets/img_carousel/logo-house.png" alt="Titre de l'image 1" className="img-icones" />
+                        <img src="/assets/img_carousel/logo-house.png" alt="Icône maison" className="img-icones" />
                         <p>Service résidentiel</p>
                     </div>
                 </div>
-                {/* Page 2 */}
                 <div className="carousel-item" data-bs-interval="5000">
-                    <img className="d-block w-100 darken-image" src="/assets/img_carousel/img_thermopompe.jpg" alt="Second slide" />
+                    <img className="d-block w-100 darken-image img_carou" src="/assets/img_carousel/rooftop-normalisee.jpg" alt="Service commercial" />
                     <div className="carousel-caption">
-                        <img src="/assets/img_carousel/logo-restaurant.png" alt="Titre de l'image 2" className="img-icones" />
+                        <img src="/assets/img_carousel/logo-restaurant.png" alt="Icône restaurant" className="img-icones" />
                         <p>Service commercial</p>
                     </div>
                 </div>
-                {/* Page 3 */}
                 <div className="carousel-item" data-bs-interval="5000">
-                    <img className="d-block w-100 darken-image" src="/assets/img_carousel/img_truck_ladder.jpg" alt="Third slide" />
+                    <img className="d-block w-100 darken-image img_carou" src="/assets/img_carousel/trucks-normalisee.jpg" alt="Service industriel" />
                     <div className="carousel-caption">
-                        <img src="/assets/img_carousel/logo-factory.png" alt="Titre de l'image 3" className="img-icones" />
+                        <img src="/assets/img_carousel/logo-factory.png" alt="Icône usine" className="img-icones" />
                         <p>Service industriel</p>
                     </div>
                 </div>
             </div>
 
-            {/* Contrôles précédent/suivant */}
+            {/* Contrôles */}
             <a className="carousel-control-prev" href="#homepageCarousel" role="button" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="sr-only">Précédent</span>
+                <span className="visually-hidden">Previous</span>
             </a>
             <a className="carousel-control-next" href="#homepageCarousel" role="button" data-bs-slide="next">
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="sr-only">Suivant</span>
+                <span className="visually-hidden">Next</span>
             </a>
         </div>
     );

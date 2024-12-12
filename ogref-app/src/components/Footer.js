@@ -13,13 +13,13 @@ const Footer = React.forwardRef((props, ref) => {
                                 <p><strong>Adresse :</strong> 213 14e Av, Richelieu, QC J3L 3V1, Canada</p>
                             </li>
                             <li>
-                                <p><strong>Téléphone :</strong> +1 450-658-1870</p>
+                                <p><strong>Téléphone :</strong> 450-658-1870</p>
                             </li>
                             <li>
                                 <p><strong>Province :</strong> Québec</p>
                             </li>
                             <li>
-                                <p><strong>Courriel :</strong> ogref@videotron.ca</p>
+                                <p><strong>Courriel :</strong> contact@ogref.ca</p>
                             </li>
                         </ul>
                     </div>
