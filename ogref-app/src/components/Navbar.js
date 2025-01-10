@@ -6,7 +6,11 @@ function Navbar({ onContactClick }) {
         <nav className="navbar navbar-expand-md navbar-dark bg-primary">
             {/* Logo au centre */}
             <Link className="navbar-brand mx-auto" to="/">
-                <img src="/assets/img_navbar/og-blue3.png" alt="Logo" className="navbar-logo" />
+               <img
+                 src={`${process.env.PUBLIC_URL}/assets/img_navbar/og-new-rbw.png`}
+                 alt="Logo"
+                 className="navbar-logo"
+               />
             </Link>
 
             {/* Bouton hamburger */}

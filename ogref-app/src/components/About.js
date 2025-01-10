@@ -25,7 +25,10 @@ function About() {
                         spécifiques de chaque client. </p>
                 </div>
                 <div className="image-content">
-                    <img src="/assets/img_about/camion-og.jpg" alt="Notre Mission"/>
+                    <img
+                      src={`${process.env.PUBLIC_URL}/assets/img_about/camion-og.jpg`}
+                      alt="Notre Mission"
+                    />
                 </div>
             </div>
 

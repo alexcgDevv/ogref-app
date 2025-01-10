@@ -1,9 +1,9 @@
 .navbar-logo {
-    width: 8rem; /* Ajustez la largeur selon vos besoins */
+    width: 10rem; /* Ajustez la largeur selon vos besoins */
     height: auto; /* La hauteur s'ajuste proportionnellement à la largeur */
 }
 .navbar.bg-primary {
-    background-color: #003366 !important; /* Utilisation de !important pour écraser les styles Bootstrap */
+    background-color: #00122a  !important; /* Utilisation de !important pour écraser les styles Bootstrap */
 }
 
 /* Navbar.css */

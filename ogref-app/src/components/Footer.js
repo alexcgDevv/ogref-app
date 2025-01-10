@@ -27,9 +27,22 @@ const Footer = React.forwardRef((props, ref) => {
                     <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 className="text-uppercase">Nos partenaires</h5>
                         <div className="mt-3 d-flex align-items-center justify-content-start">
-                            <img src="/assets/img_footer/york.png" alt="Logo York" className="partner-logo" />
-                            <img src="/assets/img_footer/Fujitsu-Logo.svg" alt="Logo Fujitsu" className="partner-logo" />
-                            <img src="/assets/img_footer/master.png" alt="Logo fournisseur 3" className="partner-logo" />
+                           <img
+                             src={`${process.env.PUBLIC_URL}/assets/img_footer/york.png`}
+                             alt="Logo York"
+                             className="partner-logo"
+                           />
+                           <img
+                             src={`${process.env.PUBLIC_URL}/assets/img_footer/Fujitsu-Logo.svg`}
+                             alt="Logo Fujitsu"
+                             className="partner-logo"
+                           />
+                           <img
+                             src={`${process.env.PUBLIC_URL}/assets/img_footer/master.png`}
+                             alt="Logo fournisseur 3"
+                             className="partner-logo"
+                           />
+
                         </div>
                     </div>
                 </div>

@@ -13,23 +13,48 @@ function Carousel() {
             {/* Slides */}
             <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="5000">
-                    <img className="d-block w-100 darken-image img_carou" src="/assets/img_carousel/thermo-normalisee.png" alt="Service résidentiel" />
+                    <img
+                      className="d-block w-100 darken-image img_carou"
+                      src={`${process.env.PUBLIC_URL}/assets/img_carousel/thermo-normalisee.png`}
+                      alt="Service résidentiel"
+                    />
                     <div className="carousel-caption">
-                        <img src="/assets/img_carousel/logo-house.png" alt="Icône maison" className="img-icones" />
+                        <img
+                          src={`${process.env.PUBLIC_URL}/assets/img_carousel/logo-house.png`}
+                          alt="Icône maison"
+                          className="img-icones"
+                        />
                         <p>Service résidentiel</p>
                     </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="5000">
-                    <img className="d-block w-100 darken-image img_carou" src="/assets/img_carousel/rooftop-normalisee.jpg" alt="Service commercial" />
+                    <img
+                      className="d-block w-100 darken-image img_carou"
+                      src={`${process.env.PUBLIC_URL}/assets/img_carousel/rooftop-normalisee.jpg`}
+                      alt="Service commercial"
+                    />
                     <div className="carousel-caption">
-                        <img src="/assets/img_carousel/logo-restaurant.png" alt="Icône restaurant" className="img-icones" />
+                        <img
+                          src={`${process.env.PUBLIC_URL}/assets/img_carousel/logo-restaurant.png`}
+                          alt="Icône restaurant"
+                          className="img-icones"
+                        />
                         <p>Service commercial</p>
                     </div>
                 </div>
                 <div className="carousel-item" data-bs-interval="5000">
-                    <img className="d-block w-100 darken-image img_carou" src="/assets/img_carousel/trucks-normalisee.jpg" alt="Service industriel" />
+                    <img
+                      className="d-block w-100 darken-image img_carou"
+                      src={`${process.env.PUBLIC_URL}/assets/img_carousel/trucks-normalisee.jpg`}
+                      alt="Service industriel"
+                    />
                     <div className="carousel-caption">
-                        <img src="/assets/img_carousel/logo-factory.png" alt="Icône usine" className="img-icones" />
+                        <img
+                          src={`${process.env.PUBLIC_URL}/assets/img_carousel/logo-factory.png`}
+                          alt="Icône usine"
+                          className="img-icones"
+                        />
+
                         <p>Service industriel</p>
                     </div>
                 </div>

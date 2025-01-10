@@ -1,8 +1,26 @@
-/* Ajoutez ceci dans votre fichier CSS */
+/* Style par défaut */
 .partner-logo {
-    width: 10rem; /* ou la taille souhaitée */
-    height: 4rem; /* pour maintenir l'aspect ratio */
-    margin-right: 20px; /* ajustez selon l'espacement désiré */
-    vertical-align: middle; /* pour aligner verticalement avec le texte si nécessaire */
-    margin-bottom: 10px; /* espace au-dessous de chaque logo */
+    width: 10rem; /* Taille par défaut */
+    height: auto; /* Garde le ratio d'aspect */
+    margin-right: 20px; /* Espacement */
+    vertical-align: middle;
+    margin-bottom: 10px;
+    max-width: 100%; /* Empêche les images de dépasser la largeur de leur conteneur */
+}
+
+/* Media query pour les écrans de petite taille */
+@media screen and (max-width: 768px) {
+    .partner-logo {
+        width: 6rem; /* Réduit la taille des images */
+        margin-right: 10px; /* Réduit l'espacement */
+        margin-bottom: 8px; /* Moins d'espacement vertical */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .partner-logo {
+        width: 4rem; /* Taille encore plus petite pour les téléphones */
+        margin-right: 5px; /* Espacement réduit */
+        margin-bottom: 5px;
+    }
 }
