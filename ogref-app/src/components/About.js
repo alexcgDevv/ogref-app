@@ -17,7 +17,7 @@ function About() {
             <div className="about-section">
                 <div className="text-content">
                     <h2>Notre Vision</h2>
-                    <p>Notre vision repose sur les principes d'authenticité et de fiabilité,
+                    <p>Notre vision repose sur les principes de  transparence et de fiabilité,
                         des valeurs qui nous guident dans chacune de nos actions et décisions. Nous sommes dédiés à
                         fournir uniquement les meilleurs produits disponibles, en nous appuyant sur des marques
                         reconnues telles que Fujitsu et York. Fiers de notre
