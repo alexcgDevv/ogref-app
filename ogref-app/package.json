@@ -16,9 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build && echo > build/.nojekyll",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -39,8 +37,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "gh-pages": "^6.2.0"
-  },
-  "homepage": "https://alexcgDevv.github.io/ogref-app/"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }
