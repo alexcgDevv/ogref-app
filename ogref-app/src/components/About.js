@@ -26,7 +26,7 @@ function About() {
                 </div>
                 <div className="image-content">
                     <img
-                      src={`${process.env.PUBLIC_URL}/assets/img_about/camion-og.jpg`}
+                      src={`${process.env.PUBLIC_URL}/assets/img_about/collage-about.jpg`}
                       alt="Notre Mission"
                     />
                 </div>
