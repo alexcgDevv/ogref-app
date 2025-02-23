@@ -16,7 +16,7 @@ const Footer = React.forwardRef((props, ref) => {
                                 <p><strong>Téléphone :</strong> 450-658-1870</p>
                             </li>
                             <li>
-                                <p><strong>Province :</strong> Québec</p>
+                                <p><strong>Licence RBQ :</strong> 8295-8588-46</p>
                             </li>
                             <li>
                                 <p><strong>Courriel :</strong> contact@ogref.ca</p>
