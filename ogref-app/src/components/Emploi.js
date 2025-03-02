@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const Emploi = () => {
     const [cv, setCv] = useState(null);
@@ -26,7 +27,7 @@ const Emploi = () => {
         formData.append("commentaire", commentaire);
 
         try {
-            const response = await fetch("http://localhost:8000/emploi", {
+            const response = await fetch(`${API_URL}/endpoint`, {
                 method: "POST",
                 body: formData,
             });
