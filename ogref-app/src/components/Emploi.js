@@ -27,7 +27,7 @@ const Emploi = () => {
         formData.append("commentaire", commentaire);
 
         try {
-            const response = await fetch(`${API_URL}/endpoint`, {
+            const response = await fetch(`${API_URL}/emploi`, {
                 method: "POST",
                 body: formData,
             });
