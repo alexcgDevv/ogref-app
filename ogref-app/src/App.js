@@ -5,6 +5,7 @@ import Carousel from './components/Carousel';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Emploi from './components/Emploi';
 
 function App() {
     const footerRef = useRef(null);
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/" element={<Carousel />} />
                     <Route path="/About" element={<About />} />
                     <Route path="/Contact" element={<Contact />} />
+                    <Route path="/Emploi" element={<Emploi />} />
 
                     {/* Redirection automatique vers '/' */}
                     <Route path="*" element={<Navigate to="/" />} />
