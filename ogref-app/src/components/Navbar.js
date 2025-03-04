@@ -33,14 +33,14 @@ function Navbar({ onContactClick }) {
                     <li className="nav-item active">
                         <Link className="nav-link" to="/">Accueil</Link>
                     </li>
-                    {/* Lien vers À propos */}
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/About">À propos</Link>
-                    </li>
                     {/* Lien vers emploi */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/Emploi">Emploi</Link>
                     </li>
+                     {/* Lien vers À propos */}
+                     <li className="nav-item">
+                        <Link className="nav-link" to="/About">À propos</Link>
+                     </li>
                     {/* Lien vers Nous contacter */}
                     <li className="nav-item">
                         <a className="nav-link" href="#footer" onClick={onContactClick}>Nous contacter</a>
