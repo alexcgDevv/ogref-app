@@ -43,6 +43,11 @@ const Footer = React.forwardRef((props, ref) => {
                              className="partner-logo"
                            />
                            <img
+                             src={`${process.env.PUBLIC_URL}/assets/img_footer/elios.png`}
+                             alt="Elios"
+                             className="partner-logo"
+                           />
+                           <img
                              src={`${process.env.PUBLIC_URL}/assets/img_footer/vanee.png`}
                              alt="Vanee"
                              className="partner-logo"
