@@ -1,40 +1,61 @@
 import React from 'react';
+import { motion } from "framer-motion";
 
-function About() {
-    return (
-        <div className="about-container">
-            <h1>À propos de nous</h1>
-            <p>Fondée à Richelieu et transmise à travers trois générations, O.G. Réfrigération incarne l'excellence et
-                la polyvalence dans le domaine du chauffage, de la climatisation et de la réfrigération. Depuis ses
-                débuts, notre entreprise a su évoluer tout en restant fidèle à l'engagement de qualité instauré par son
-                fondateur, Omer Gougeon et ses fils Michel et Marc. Initialement axée sur les besoins locaux,
-                notre entreprise a su s'adapter aux
-                évolutions technologiques et aux exigences diversifiées de notre clientèle, couvrant ainsi les secteurs
-                résidentiel, commercial et industriel. Aujourd'hui dirigée par Maxime et Alexandre, les petits-fils
-                d'Omer, O.G. Réfrigération continue de se distinguer par son savoir-faire unique et son approche
-                personnalisée, assurant à chacun de nos clients une solution optimale et durable.</p>
+export default function About() {
+  return (
+    <div className="container py-5">
+      <motion.h1
+        className="text-center mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        À propos de nous
+      </motion.h1>
 
-            <div className="about-section">
-                <div className="text-content">
-                    <h2>Notre Vision</h2>
-                    <p>Notre vision repose sur les principes de  transparence et de fiabilité,
-                        des valeurs qui nous guident dans chacune de nos actions et décisions. Nous sommes dédiés à
-                        fournir uniquement les meilleurs produits disponibles, en nous appuyant sur des marques
-                        reconnues telles que Fujitsu et York. Fiers de notre
-                        expertise, nous nous engageons à offrir une expérience personnalisée et adaptée aux besoins
-                        spécifiques de chaque client. </p>
-                </div>
-                <div className="image-content">
-                    <img
-                      src={`${process.env.PUBLIC_URL}/assets/img_about/collage-about.jpg`}
-                      alt="Notre Mission"
-                    />
-                </div>
-            </div>
+      <motion.p
+        className="text-center lead"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        Depuis trois générations, O.G. Réfrigération se spécialise en chauffage,
+        climatisation et réfrigération. Fondée par Omer Gougeon et développée par ses fils,
+        l’entreprise a su évoluer avec les avancées technologiques tout en restant fidèle à ses valeurs.
+        Aujourd’hui dirigée par Maxime et Alexandre, elle continue d’offrir des solutions durables
+        et adaptées aux besoins résidentiels, commerciaux et industriels.
+      </motion.p>
 
+      <div className="row align-items-center mt-5">
+        {/* Texte */}
+        <motion.div
+          className="col-md-6"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <h2 className="fw-bold">Notre Engagement</h2>
+          <p>
+            Fiabilité, transparence et expertise définissent notre approche. Nous privilégions des
+            équipements de qualité, comme ceux de <strong>Fujitsu</strong> et <strong>York</strong>,
+            et nous assurons à chaque client un service personnalisé et performant.
+          </p>
+        </motion.div>
 
-        </div>
-    );
+        {/* Image */}
+        <motion.div
+          className="col-md-6 text-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/img_about/collage-about.jpg`}
+            alt="Notre Mission"
+            className="img-fluid rounded shadow-lg"
+          />
+        </motion.div>
+      </div>
+    </div>
+  );
 }
-
-export default About;
