@@ -138,29 +138,31 @@
 }
 
 /* ✅ Ajustements pour mobiles (très petits écrans) */
+/* Ajustement pour éviter le chevauchement sur mobile */
 @media (max-width: 768px) {
     .carousel-caption {
-        top: 50%; /* Décale légèrement pour éviter les indicateurs */
-        max-width: 80%;
+        top: 45%; /* Monte le texte pour éviter les indicateurs */
+        max-width: 75%;
     }
 
     .img-icones {
-        width: 6rem !important;
-        max-width: 70px;
+        width: 5.5rem !important; /* Réduit légèrement la taille des icônes */
+        max-width: 65px;
     }
 
     .carousel-caption p {
-        font-size: 1rem;
-        padding: 0.5rem;
+        font-size: 0.95rem;
+        padding: 0.4rem 0.7rem;
         line-height: 1.2;
     }
 
     .carousel-indicators {
-        bottom: 3px; /* Les place bien sous le texte */
+        bottom: -3px; /* Décale légèrement les indicateurs vers le bas */
     }
 
     .carousel-item img {
-        max-height: 20rem;
+        max-height: 18rem; /* Ajuste la hauteur pour éviter un effet trop serré */
     }
 }
+
 

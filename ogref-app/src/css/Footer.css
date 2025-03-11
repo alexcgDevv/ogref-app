@@ -75,3 +75,24 @@
         font-size: 0.8rem;
     }
 }
+/* S'assurer que les liens autour des logos n'affectent pas leur taille */
+.footer-partners a {
+    display: inline-block; /* Permet au lien de conserver la taille de l’image */
+    text-decoration: none; /* Supprime tout soulignement des liens */
+}
+
+/* Logos des partenaires */
+.partner-logo {
+    flex: 1 1 0;
+    max-width: 10rem; /* Taille normale */
+    width: calc(25% - 20px);
+    height: auto;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
