@@ -1,10 +1,53 @@
+/* Conteneur principal du footer */
+.footer {
+    background-color: #00122a; /* Même couleur que la navbar */
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Section partenaires */
+.footer-partners {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+/* Logos des partenaires */
 .partner-logo {
-    /* Chaque logo occupe environ 25% de la largeur du conteneur avec de la marge */
     flex: 1 1 0;
-    max-width: 10rem; /* largeur maximale souhaitée */
-    width: calc(25% - 20px); /* calcule une largeur en fonction de l'espace total moins les marges */
+    max-width: 10rem;
+    width: calc(25% - 20px);
     height: auto;
     margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol : léger zoom */
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Texte en bas du footer */
+.footer-text {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Lien dans le footer */
+.footer a {
+    color: #00aaff; /* Bleu moderne */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #0077cc;
 }
 
 /* Media query pour les écrans de taille moyenne */
@@ -14,6 +57,10 @@
         width: calc(25% - 10px);
         margin: 8px;
     }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
 }
 
 /* Media query pour les téléphones */
@@ -22,5 +69,9 @@
         max-width: 4rem;
         width: calc(25% - 5px);
         margin: 5px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
     }
 }

@@ -1,28 +1,83 @@
+/* Logo de la navbar */
 .navbar-logo {
-    width: 10rem; /* Ajustez la largeur selon vos besoins */
-    height: auto; /* La hauteur s'ajuste proportionnellement à la largeur */
+    width: 8rem; /* Taille plus petite pour un design plus équilibré */
+    height: auto;
 }
+
+/* Couleur de fond de la navbar */
 .navbar.bg-primary {
-    background-color: #00122a  !important; /* Utilisation de !important pour écraser les styles Bootstrap */
+    background-color: #00122a !important; /* Conserve la couleur sombre */
 }
 
-/* Navbar.css */
+/* Modernisation de la police et de la taille */
 .navbar {
-    font-size: 1.2rem;
-    font-family: 'Arial', sans-serif; /* Change le type de police */
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif; /* Cohérence avec le reste du site */
+    padding: 0.8rem 2rem; /* Espacement amélioré */
 }
 
+/* Ajustement des liens de navigation */
 .navbar-nav .nav-link {
-    color: white !important; /* Assure que la couleur des liens soit blanche */
+    color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.navbar-nav .nav-item {
-    margin-right: 2rem; /* Ajoute de l'espace à droite de chaque élément */
-}
-
-
+/* Effet de survol plus moderne */
 .navbar-nav .nav-link:hover {
-    color: #cccccc !important; /* Change la couleur des liens au survol */
+    color: #00aaff !important; /* Bleu moderne en hover */
+    transform: translateY(-2px); /* Légère élévation pour effet dynamique */
 }
 
+/* Espacement des éléments */
+.navbar-nav .nav-item {
+    margin-right: 1.5rem;
+}
 
+/* Ajout d’un léger soulignement en hover */
+.navbar-nav .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Bouton de menu burger (mobile) */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+}
+
+/* Icône du menu burger */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Mobile : Ajustement du menu pour un affichage clair */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 0.7rem;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 0; /* Évite un trop grand espacement sur mobile */
+    }
+
+    .navbar-logo {
+        width: 7rem; /* Ajustement de la taille du logo */
+    }
+}

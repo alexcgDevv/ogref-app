@@ -1,114 +1,166 @@
 #homepageCarousel {
-    padding-top: 2rem;   /* rem plutôt que px */
-    padding-left: 2rem;  /* rem plutôt que px */
-    padding-right: 2rem; /* rem plutôt que px */
-    position: relative;  /* Nécessaire pour que les contrôles soient bien positionnés */
-    overflow: hidden;    /* Assure que tout reste à l'intérieur du conteneur */
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Carousel Items */
 .carousel-item img {
-    width: 100%; /* Maintient la largeur à 100% du conteneur */
-    height: auto; /* Ajuste la hauteur pour conserver le ratio */
-    max-height: 33rem; /* Hauteur maximale dynamique */
+    width: 100%;
+    height: auto;
+    max-height: 33rem;
+    transition: opacity 0.7s ease-in-out;
 }
 
 .darken-image {
-    filter: brightness(35%);
+    filter: brightness(40%);
 }
 
 .img_carou {
     min-height: 15rem;
 }
 
+/* Légende centrée (icône au-dessus, texte en dessous) */
+.carousel-caption {
+    position: absolute;
+    top: 48%; /* Ajustement optimal pour que le texte ne chevauche rien */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 85%; /* Évite que le texte dépasse */
+}
+
+/* Icônes */
 .img-icones {
-    width: 15rem !important;
+    width: 9rem !important;
     height: auto !important;
     margin-bottom: 10px !important;
+    opacity: 0.9;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
 }
 
-.img-og {
-    width: 35rem !important;
-    height: auto !important;
-    margin-bottom: 10px !important;
+.img-icones:hover {
+    transform: scale(1.1);
+    opacity: 1;
 }
 
+/* Texte */
 .carousel-caption p {
-    font-size: 1.2rem;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    padding: 0.5rem;
-    border-radius: 5px;
+    font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-/* Contrôles du carousel */
+/* Indicateurs centrés sous le texte */
+/* Indicateurs parfaitement centrés sous le texte */
+.carousel-indicators {
+    position: absolute;
+    bottom: 8px; /* Ajustement fin pour éviter tout chevauchement */
+    width: auto; /* Permet de s’adapter à la largeur du contenu */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* Assure le centrage parfait */
+    gap: 8px;
+}
+
+
+/* Style des indicateurs (points) */
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #007bff;
+}
+
+/* Contrôles modernisés */
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
-    top: 50%; /* Centre vertical */
+    top: 50%;
     transform: translateY(-50%);
-    z-index: 1; /* S'assurer qu'ils sont au-dessus des images */
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4rem; /* Taille minimum visible */
-    height: 4rem;
-    opacity: 1; /* Toujours visible */
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour meilleure visibilité */
-    border-radius: 10%; /* Forme arrondie */
+    width: 3.5rem;
+    height: 3.5rem;
+    opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* Ajuster les marges pour éviter les boutons coupés */
-.carousel-control-prev {
-    left: 3rem; /* Ajustement horizontal */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.carousel-control-next {
-    right: 3rem; /* Ajustement horizontal */
-}
-
-/* Icônes des contrôles */
+/* Ajustement de la taille des icônes de contrôle */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    width: 30px; /* Ajuster la taille des icônes */
-    height: 30px;
-    background-size: contain; /* Ajuste pour s'assurer que les icônes ne sont pas coupées */
-}
-.img-icones {
-    width: 15%; /* Adapte la largeur en fonction de la taille du conteneur */
-    max-width: 35rem; /* Taille maximale pour éviter qu'elle devienne trop grande */
-    height: auto; /* Maintient le ratio d'aspect */
-    margin-bottom: 10px !important; /* Espacement entre l'image et le texte */
-    display: block; /* S'assure que l'image reste bien centrée */
-    margin-left: auto; /* Centre horizontalement */
-    margin-right: auto; /* Centre horizontalement */
+    width: 25px;
+    height: 25px;
 }
 
-/* Réduction intermédiaire pour écrans entre 768px et 1000px */
+/* ✅ RESPONSIVITÉ */
+
+/* Ajustements pour tablettes */
 @media (max-width: 1000px) and (min-width: 769px) {
     .img-icones {
-        width: 20%; /* Taille intermédiaire */
-        max-width: 200px; /* Taille maximale adaptée */
+        width: 8rem !important;
+        max-width: 100px;
+    }
+
+    .carousel-caption p {
+        font-size: 1.1rem;
     }
 }
 
-/* Réduction pour les petits écrans */
+/* ✅ Ajustements pour mobiles (très petits écrans) */
 @media (max-width: 768px) {
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 30px;
-        height: 30px;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        width: 45px;
-        height: 45px;
+    .carousel-caption {
+        top: 50%; /* Décale légèrement pour éviter les indicateurs */
+        max-width: 80%;
     }
 
     .img-icones {
-        width: 25%; /* Adapte la largeur sur des écrans plus petits */
-        max-width: 100px; /* Réduit la taille maximale */
+        width: 6rem !important;
+        max-width: 70px;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+        padding: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .carousel-indicators {
+        bottom: 3px; /* Les place bien sous le texte */
+    }
+
+    .carousel-item img {
+        max-height: 20rem;
     }
 }
+
