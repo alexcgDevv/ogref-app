@@ -26,34 +26,45 @@ const Footer = React.forwardRef((props, ref) => {
 
                     <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 className="text-uppercase">Nos partenaires</h5>
-                        <div className="mt-3 d-flex align-items-center justify-content-around flex-wrap">
-                           <img
-                             src={`${process.env.PUBLIC_URL}/assets/img_footer/york.png`}
-                             alt="Logo York"
-                             className="partner-logo"
-                           />
-                           <img
-                             src={`${process.env.PUBLIC_URL}/assets/img_footer/Fujitsu-Logo.svg`}
-                             alt="Logo Fujitsu"
-                             className="partner-logo"
-                           />
-                           <img
-                             src={`${process.env.PUBLIC_URL}/assets/img_footer/master.png`}
-                             alt="Le Groupe Master"
-                             className="partner-logo"
-                           />
-                           <img
-                             src={`${process.env.PUBLIC_URL}/assets/img_footer/elios.png`}
-                             alt="Elios"
-                             className="partner-logo"
-                           />
-                           <img
-                             src={`${process.env.PUBLIC_URL}/assets/img_footer/vanee.png`}
-                             alt="Vanee"
-                             className="partner-logo"
-                           />
+                        <div className="footer-partners">
+                            <a href="https://www.york.com" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/img_footer/york.png`}
+                                    alt="Logo York"
+                                    className="partner-logo"
+                                />
+                            </a>
+                            <a href="https://www.fujitsu.com" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/img_footer/Fujitsu-Logo.svg`}
+                                    alt="Logo Fujitsu"
+                                    className="partner-logo"
+                                />
+                            </a>
+                            <a href="https://www.master.ca" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/img_footer/master.png`}
+                                    alt="Le Groupe Master"
+                                    className="partner-logo"
+                                />
+                            </a>
+                            <a href="https://www.elios.com" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/img_footer/elios.png`}
+                                    alt="Elios"
+                                    className="partner-logo"
+                                />
+                            </a>
+                            <a href="https://www.vanee.ca" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/img_footer/vanee.png`}
+                                    alt="Vanee"
+                                    className="partner-logo"
+                                />
+                            </a>
                         </div>
                     </div>
+
                 </div>
 
                 <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
