@@ -35,11 +35,12 @@ export default function About() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="fw-bold">Notre Engagement</h2>
-          <p>
+          <p className="lead">
             Fiabilité, transparence et expertise définissent notre approche. Nous privilégions des
             équipements de qualité, comme ceux de <strong>Fujitsu</strong> et <strong>York</strong>,
             et nous assurons à chaque client un service personnalisé et performant.
           </p>
+
         </motion.div>
 
         {/* Image */}
