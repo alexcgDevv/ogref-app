@@ -10,8 +10,9 @@
 .carousel-item img {
     width: 100%;
     height: auto;
-    max-height: 33rem;
+    max-height: 80vh; /* 🔼 Adapté aux très grands écrans */
     transition: opacity 0.7s ease-in-out;
+    object-fit: cover; /* Remplit sans déformer */
 }
 
 .darken-image {
@@ -19,20 +20,20 @@
 }
 
 .img_carou {
-    min-height: 15rem;
+    min-height: 40vh; /* 🔼 Meilleure présence sur écran large */
 }
 
 /* Légende centrée (icône au-dessus, texte en dessous) */
 .carousel-caption {
     position: absolute;
-    top: 48%; /* Ajustement optimal pour que le texte ne chevauche rien */
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 85%; /* Évite que le texte dépasse */
+    max-width: 85%;
 }
 
 /* Icônes */
@@ -62,21 +63,18 @@
     margin-top: 10px;
 }
 
-/* Indicateurs centrés sous le texte */
-/* Indicateurs parfaitement centrés sous le texte */
+/* Indicateurs */
 .carousel-indicators {
     position: absolute;
-    bottom: 8px; /* Ajustement fin pour éviter tout chevauchement */
-    width: auto; /* Permet de s’adapter à la largeur du contenu */
+    bottom: 8px;
+    width: auto;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: center; /* Assure le centrage parfait */
+    justify-content: center;
     gap: 8px;
 }
 
-
-/* Style des indicateurs (points) */
 .carousel-indicators li {
     width: 10px;
     height: 10px;
@@ -116,7 +114,6 @@
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Ajustement de la taille des icônes de contrôle */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     width: 25px;
@@ -125,7 +122,7 @@
 
 /* ✅ RESPONSIVITÉ */
 
-/* Ajustements pour tablettes */
+/* Tablettes */
 @media (max-width: 1000px) and (min-width: 769px) {
     .img-icones {
         width: 8rem !important;
@@ -137,16 +134,15 @@
     }
 }
 
-/* ✅ Ajustements pour mobiles (très petits écrans) */
-/* Ajustement pour éviter le chevauchement sur mobile */
+/* Mobiles */
 @media (max-width: 768px) {
     .carousel-caption {
-        top: 45%; /* Monte le texte pour éviter les indicateurs */
+        top: 45%;
         max-width: 75%;
     }
 
     .img-icones {
-        width: 5.5rem !important; /* Réduit légèrement la taille des icônes */
+        width: 5.5rem !important;
         max-width: 65px;
     }
 
@@ -157,12 +153,10 @@
     }
 
     .carousel-indicators {
-        bottom: -3px; /* Décale légèrement les indicateurs vers le bas */
+        bottom: -3px;
     }
 
     .carousel-item img {
-        max-height: 18rem; /* Ajuste la hauteur pour éviter un effet trop serré */
+        max-height: 18rem;
     }
 }
-
-

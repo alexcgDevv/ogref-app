@@ -3,22 +3,40 @@
     background-color: #00122a;
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 2rem;
     font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-top: auto;
+}
+
+/* ➕ Extension du conteneur du footer sur grands écrans */
+.footer .container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media screen and (min-width: 1920px) {
+    .footer .container {
+        max-width: 1700px;
+    }
 }
 
 /* Conteneur des partenaires */
 .footer-partners {
     display: flex;
-    justify-content: center; /* Centrage horizontal */
+    justify-content: center;
     align-items: center;
-    gap: 12px; /* Réduction de l'espacement pour mieux rentrer dans la page */
-    flex-wrap: nowrap; /* Force l'alignement en ligne */
-    overflow: hidden; /* Empêche les débordements */
+    gap: 16px;
+    flex-wrap: nowrap;
+    overflow: hidden;
     max-width: 100%;
+    margin-top: 1.5rem;
 }
 
-/* Liens entourant les logos */
+/* Liens autour des logos */
 .footer-partners a {
     display: flex;
     justify-content: center;
@@ -28,32 +46,46 @@
 
 /* Logos des partenaires */
 .partner-logo {
-    max-width: 5.6rem; /* Réduction supplémentaire de la taille des logos */
+    max-width: 6.5rem;
     height: auto;
     transition: transform 0.3s ease-in-out;
 }
 
-/* Effet au survol */
 .partner-logo:hover {
     transform: scale(1.1);
 }
 
 /* 🔹 RESPONSIVE DESIGN 🔹 */
 
-/* Pour tablettes */
+/* Tablettes */
 @media screen and (max-width: 1024px) {
+    .footer {
+        padding: 2.5rem 1.5rem;
+        font-size: 1rem;
+    }
+
     .partner-logo {
-        max-width: 5.5rem; /* Taille plus petite sur tablette */
+        max-width: 5.5rem;
+    }
+
+    .footer-partners {
+        gap: 12px;
     }
 }
 
-/* Pour mobiles */
+/* Mobiles */
 @media screen and (max-width: 768px) {
+    .footer {
+        padding: 2rem 1rem;
+        font-size: 0.95rem;
+    }
+
     .footer-partners {
-        flex-wrap: wrap; /* Permet de passer sur deux lignes si nécessaire */
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .partner-logo {
-        max-width: 5.5rem; /* Taille encore réduite sur mobile */
+        max-width: 5.3rem;
     }
 }

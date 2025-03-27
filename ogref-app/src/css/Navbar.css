@@ -1,41 +1,40 @@
 /* Logo de la navbar */
 .navbar-logo {
-    width: 8rem; /* Taille plus petite pour un design plus équilibré */
+    width: 9.5rem; /* 🔼 Augmenté pour les grands écrans */
     height: auto;
 }
 
 /* Couleur de fond de la navbar */
 .navbar.bg-primary {
-    background-color: #00122a !important; /* Conserve la couleur sombre */
+    background-color: #00122a !important;
 }
 
-/* Modernisation de la police et de la taille */
+/* Police et taille modernisées */
 .navbar {
-    font-size: 1.1rem;
-    font-family: 'Poppins', sans-serif; /* Cohérence avec le reste du site */
-    padding: 0.8rem 2rem; /* Espacement amélioré */
+    font-size: 1.25rem; /* 🔼 Taille augmentée pour l'équilibre visuel */
+    font-family: 'Poppins', sans-serif;
+    padding: 1.2rem 2.5rem; /* 🔼 Plus d’espace vertical */
 }
 
-/* Ajustement des liens de navigation */
+/* Liens de navigation */
 .navbar-nav .nav-link {
     color: white !important;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Effet de survol plus moderne */
 .navbar-nav .nav-link:hover {
-    color: #00aaff !important; /* Bleu moderne en hover */
-    transform: translateY(-2px); /* Légère élévation pour effet dynamique */
+    color: #00aaff !important;
+    transform: translateY(-2px);
 }
 
 /* Espacement des éléments */
 .navbar-nav .nav-item {
-    margin-right: 1.5rem;
+    margin-right: 2rem; /* 🔼 Plus espacé sur desktop */
 }
 
-/* Ajout d’un léger soulignement en hover */
+/* Soulignement au hover */
 .navbar-nav .nav-link::after {
     content: "";
     display: block;
@@ -49,22 +48,23 @@
     width: 100%;
 }
 
-/* Bouton de menu burger (mobile) */
+/* Bouton menu burger (mobile) */
 .navbar-toggler {
     border: none;
     background-color: transparent;
     padding: 0.5rem;
 }
 
-/* Icône du menu burger */
+/* Icône burger personnalisée */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Mobile : Ajustement du menu pour un affichage clair */
+/* ✅ Responsive : mobile */
 @media (max-width: 768px) {
     .navbar {
         padding: 0.5rem 1rem;
+        font-size: 1rem; /* 🔽 Taille réduite pour mobile */
     }
 
     .navbar-nav .nav-link {
@@ -74,10 +74,10 @@
     }
 
     .navbar-nav .nav-item {
-        margin-right: 0; /* Évite un trop grand espacement sur mobile */
+        margin-right: 0;
     }
 
     .navbar-logo {
-        width: 7rem; /* Ajustement de la taille du logo */
+        width: 7rem;
     }
 }

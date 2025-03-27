@@ -16,20 +16,22 @@ function App() {
 
     return (
         <Router>
-            <div className="App">
+            <div className="app-container">
                 {/* Navbar toujours affichée */}
                 <Navbar onContactClick={scrollToFooter} />
 
-                {/* Routes */}
-                <Routes>
-                    <Route path="/" element={<Carousel />} />
-                    <Route path="/About" element={<About />} />
-                    <Route path="/Contact" element={<Contact />} />
-                    <Route path="/Emploi" element={<Emploi />} />
+                {/* Contenu principal */}
+                <main className="main-content">
+                    <Routes>
+                        <Route path="/" element={<Carousel />} />
+                        <Route path="/About" element={<About />} />
+                        <Route path="/Contact" element={<Contact />} />
+                        <Route path="/Emploi" element={<Emploi />} />
 
-                    {/* Redirection automatique vers '/' */}
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
+                        {/* Redirection automatique vers '/' */}
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </Routes>
+                </main>
 
                 {/* Footer toujours affiché */}
                 <Footer ref={footerRef} />
