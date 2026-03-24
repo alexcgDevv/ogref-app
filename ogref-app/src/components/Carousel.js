@@ -22,7 +22,7 @@ function Carousel() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, slides.length]);
 
   return (
     <div id="homepageCarousel" className="carousel slide" data-bs-ride="carousel">
