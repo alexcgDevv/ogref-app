@@ -1,53 +1,77 @@
 from fastapi import FastAPI, File, Form, UploadFile, HTTPException
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
-import os
 from fastapi.middleware.cors import CORSMiddleware
+import os
+import base64
+import html
+import resend
 
 app = FastAPI()
 
-EMAIL_SENDER = "alexcg.devv@gmail.com"
-EMAIL_PASSWORD = "sjmc gblp iexn xxmg "
-EMAIL_RECEIVER = "contact@ogref.ca"
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # TEMPORAIREMENT POUR TESTER (peut être restreint plus tard)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+EMAIL_FROM = os.getenv("EMAIL_FROM", "cv@ogref.ca")
+EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER", "contact@ogref.ca")
+
+resend.api_key = RESEND_API_KEY
 
 
-def send_email(cv_file, commentaire):
+def send_email(cv_file: UploadFile, commentaire: str):
+    if not RESEND_API_KEY:
+        raise HTTPException(
+            status_code=500,
+            detail="RESEND_API_KEY manquante sur le serveur."
+        )
+
     try:
-        msg = MIMEMultipart()
-        msg["From"] = EMAIL_SENDER
-        msg["To"] = EMAIL_RECEIVER
-        msg["Subject"] = "Nouvelle Candidature"
+        commentaire_safe = html.escape(commentaire)
 
-        msg.attach(MIMEText(f"Commentaire du candidat :\n{commentaire}", "plain"))
+        file_bytes = cv_file.file.read()
+        if not file_bytes:
+            raise HTTPException(
+                status_code=400,
+                detail="Le fichier CV est vide."
+            )
 
-        # Ajouter le fichier CV en pièce jointe
-        part = MIMEBase("application", "octet-stream")
-        part.set_payload(cv_file.file.read())
-        encoders.encode_base64(part)
-        part.add_header("Content-Disposition", f"attachment; filename={cv_file.filename}")
-        msg.attach(part)
+        file_base64 = base64.b64encode(file_bytes).decode("utf-8")
 
-        # Envoyer l'email
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())
-        server.quit()
+        resend.Emails.send({
+            "from": f"O.G. Réfrigération <{EMAIL_FROM}>",
+            "to": [EMAIL_RECEIVER],
+            "subject": "Nouvelle candidature - O.G. Réfrigération",
+            "html": f"""
+                <h2>Nouvelle candidature</h2>
+                <p><strong>Commentaire du candidat :</strong></p>
+                <p>{commentaire_safe}</p>
+                <p>Le CV est joint à ce courriel.</p>
+            """,
+            "attachments": [
+                {
+                    "filename": cv_file.filename,
+                    "content": file_base64,
+                }
+            ],
+        })
+
+    except HTTPException:
+        raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Erreur lors de l'envoi de l'email : {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Erreur lors de l'envoi de l'email : {str(e)}"
+        )
+
 
 @app.post("/emploi")
-async def submit_emploi(cv: UploadFile = File(...), commentaire: str = Form(...)):
+async def submit_emploi(
+    cv: UploadFile = File(...),
+    commentaire: str = Form(...)
+):
     send_email(cv, commentaire)
     return {"message": "Candidature envoyée avec succès"}
