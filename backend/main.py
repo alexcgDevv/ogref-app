@@ -11,7 +11,7 @@ app = FastAPI()
 
 EMAIL_SENDER = "alexcg.devv@gmail.com"
 EMAIL_PASSWORD = "sjmc gblp iexn xxmg "
-EMAIL_RECEIVER = "cholette1103@gmail.com"
+EMAIL_RECEIVER = "contact@ogref.ca"
 
 app.add_middleware(
     CORSMiddleware,
